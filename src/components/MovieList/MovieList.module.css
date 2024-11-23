@@ -1,0 +1,22 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 30px;
+  & li {
+    list-style-type: none;
+    border: 1px solid #551a8b;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  & h2 {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+.image {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
