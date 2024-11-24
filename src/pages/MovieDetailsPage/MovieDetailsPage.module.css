@@ -55,7 +55,7 @@ img {
   display: flex;
   & ul {
     display: flex;
-    gap: 8px;
+    gap: 5px;
   }
   & p {
     font-size: 25px;

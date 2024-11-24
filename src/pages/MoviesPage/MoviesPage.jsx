@@ -14,9 +14,7 @@ export default function MoviesPage() {
     const newQuery = searchParams.get('query') ?? ''
    
     useEffect(() => {
-        
             setSearchQuery(newQuery)
-           
     }, [newQuery])
     
     const handleSearchSubmit = (query) => {

@@ -12,7 +12,7 @@ const buildLinkClass = ({ isActive }) => {
 
 export default function MovieDetailsPage() {
     const location = useLocation()
-    const backLinkHref = useRef(location.state ?? '/movies')
+    const backLinkHref = useRef(location.state?.from ?? '/movies');
     const { movieId } = useParams()
     const [details, setDetails] = useState(null)
 

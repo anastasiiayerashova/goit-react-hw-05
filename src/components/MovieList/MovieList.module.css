@@ -1,15 +1,19 @@
 .list {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px 30px;
+  gap: 20px 30px; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  padding-left: 20px;
   & li {
-    list-style-type: none;
-    border: 1px solid #551a8b;
-    border-radius: 4px;
     cursor: pointer;
+    list-style-type: disc;
   }
+
   & h2 {
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
   }
 }

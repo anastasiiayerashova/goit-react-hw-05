@@ -12,13 +12,18 @@ export default function SearchBar({onSubmit}) {
     }
     }
     return (
+        <div className={s.wrapper}> 
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form>
-                <HiSearch className={s.icon}/>
+                <Form>
+                    <button type='submit' className={s.icon}>
+<HiSearch size={24}/>
+                    </button>
+                
                 <Field type='text' name='query' className={s.input} />
-                <button type='submit'>search</button>
+              
                 
             </Form>
-        </Formik>
+            </Formik>
+            </div>
     )
 }
