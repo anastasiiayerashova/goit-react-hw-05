@@ -2,6 +2,7 @@ import s from './HomePage.module.css'
 import MovieList from '../../components/MovieList/MovieList'
 import { useState, useEffect } from 'react'
 import { getTrendingMovies } from '../../api'
+import Loader from '../../components/Loader/Loader'
 
 export default function HomePage() {
     const [movies, setMovies] = useState([])
@@ -14,6 +15,10 @@ export default function HomePage() {
         }
         getMoviesList()
     }, [])
+
+    if (!movies) {
+        return <Loader/>
+    }
 
     return (
         <div> 

@@ -1,3 +1,4 @@
+import s from './MoviesPage.module.css'
 import MovieList from '../../components/MovieList/MovieList'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import { useEffect, useState } from 'react'
@@ -20,15 +21,17 @@ export default function MoviesPage() {
         }
         getSearchQuery()
     }, [newQuery])
-    
+
     const handleSearchSubmit = (query) => {
         const newParams = query !== '' ? { query } : {}
         setSearchParams(newParams)  
-   }
+    }
+    
     return (
         <div>  
-         <SearchBar onSubmit={handleSearchSubmit}/>
-         <MovieList movies={newMovies}/>
+            <SearchBar onSubmit={handleSearchSubmit} />
+            {newMovies.length === 0 && (<p className={s.text}>No movies found. Try searching for something else</p>)}
+            <MovieList movies={newMovies}/>
         </div>
     )
 }
