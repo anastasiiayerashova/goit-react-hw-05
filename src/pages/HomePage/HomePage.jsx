@@ -1,11 +1,10 @@
 import s from './HomePage.module.css'
 import MovieList from '../../components/MovieList/MovieList'
-import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getTrendingMovies } from '../../api'
 
 export default function HomePage() {
-  const [movies, setMovies] = useState([])
+    const [movies, setMovies] = useState([])
    
     useEffect(() => {
         document.title = 'Home'
@@ -13,7 +12,6 @@ export default function HomePage() {
             const data = await getTrendingMovies()
             setMovies(data)
         }
-        
         getMoviesList()
     }, [])
 
@@ -21,6 +19,6 @@ export default function HomePage() {
         <div> 
             <h1 className={s.title}>Trending today</h1>
             <MovieList movies={movies} />
-             </div>
+        </div>
     )
 }

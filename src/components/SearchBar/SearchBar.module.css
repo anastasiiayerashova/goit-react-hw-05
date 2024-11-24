@@ -9,11 +9,11 @@
 
 .input {
   padding: 8px 32px 8px 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   font: inherit;
   border: 1px solid #551a8b;
   outline: none;
-  min-width: 250px;
+  min-width: 200px;
 }
 
 .icon {

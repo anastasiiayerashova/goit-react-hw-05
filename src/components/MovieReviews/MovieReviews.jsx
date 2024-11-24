@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import s from './MovieReviews.module.css'
 import { useParams } from 'react-router-dom'
 import { getMovieReviews } from '../../api'
+import Loader from '../Loader/Loader'
 
 export default function MovieReviews() {
     const [reviews, setReviews] = useState([])
@@ -10,18 +11,17 @@ export default function MovieReviews() {
     useEffect(() => {
         const getReviews = async () => {
             const data = await getMovieReviews(movieId)
-            console.log(data)
             setReviews(data)
         }
         getReviews()
     }, [movieId])
 
     if (!reviews) {
-        return null
+        return <Loader/>
     }
 
     if (reviews.length === 0) {
-        return <p>No reviews yet...</p>
+        return <p className={s.noReviews}>No reviews yet...</p>
     }
 
   const finalDate = (createdAt) => {
@@ -30,19 +30,22 @@ export default function MovieReviews() {
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const year = date.getFullYear();
 
-  return `${day}.${month}.${year}`
-    }
+  return `${day}.${month}.${year}` }
 
     return (
         <div>
             <ul className={s.list}>
                 {reviews.map(review => (
                     <li key={review.id} className={s.item}>
-                        {review.author_details.avatar_path !== null && (
-                            <div> 
+
+                        {review.author_details.avatar_path !== null ? (<div> 
                             <img src={`https://image.tmdb.org/t/p/w200${review.author_details.avatar_path}`} alt={review.author} className={s.image} />
                         </div>
-                        )}
+                        ) : (<div> 
+                            <img src='/defaultUser.webp' alt={review.author} className={s.image} />
+                            </div>)
+                        }
+                        
                         <div>
                             <h4>{review.author}</h4>
                             <p className={s.content}>{review.content}</p>

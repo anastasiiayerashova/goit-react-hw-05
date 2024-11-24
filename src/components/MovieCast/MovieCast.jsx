@@ -2,6 +2,7 @@ import s from './MovieCast.module.css'
 import { getMovieCast } from '../../api'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Loader from '../Loader/Loader'
 
 export default function MovieCast() {
     const [cast, setCast] = useState([])
@@ -16,7 +17,11 @@ export default function MovieCast() {
     }, [movieId])
     
     if (!cast) {
-        return null
+        return <Loader/>
+    }
+
+    if (cast.length === 0) {
+        return <p className={s.castText}>Cast details are missing. Check back later for updates!</p>
     }
 
     return (
@@ -24,8 +29,10 @@ export default function MovieCast() {
             <ul className={s.list}>
                 {cast.map(actor => (
                     <li key={actor.cast_id} className={s.item}>
-                        {actor.profile_path !== null && (
+                        {actor.profile_path ? (
                                      <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} className={s.image} />
+                        ) : (
+                                     <img src='/defaultActor.jpg' alt={actor.name} className={s.image} />
                         )}
                         <div className={s.actorDiv}>
                             <h4>{actor.name}</h4>
