@@ -4,6 +4,7 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import { useEffect, useState } from 'react'
 import { searchMovie } from '../../api'
 import { useSearchParams } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function MoviesPage() {
 

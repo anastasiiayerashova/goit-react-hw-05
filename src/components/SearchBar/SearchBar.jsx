@@ -1,5 +1,6 @@
 import s from './SearchBar.module.css'
 import { Formik, Form, Field } from 'formik'
+import toast from 'react-hot-toast';
 import { LiaSearchSolid } from "react-icons/lia";
 
 export default function SearchBar({ onSubmit }) {
@@ -11,7 +12,14 @@ export default function SearchBar({ onSubmit }) {
     const handleSubmit = (values) => {
         if (values.query.trim() !== '') {
         onSubmit(values.query)
-    }
+        }
+        else {
+            return toast.error('Please, enter something', {
+                iconTheme: {
+                    primary: '#551a8b'
+                }
+            })
+        }
     }
 
     return (
