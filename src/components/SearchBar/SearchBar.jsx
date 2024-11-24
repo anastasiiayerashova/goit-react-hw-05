@@ -10,16 +10,11 @@ export default function SearchBar({ onSubmit }) {
     }
 
     const handleSubmit = (values) => {
-        if (values.query.trim() !== '') {
-        onSubmit(values.query)
-        }
-        else {
-            return toast.error('Please, enter something', {
-                iconTheme: {
-                    primary: '#551a8b'
-                }
-            })
-        }
+        values.query.trim() !== '' ? onSubmit(values.query) : toast.error('Please, enter something', {
+            iconTheme: {
+                primary: '#551a8b'
+            }
+        })
     }
 
     return (
