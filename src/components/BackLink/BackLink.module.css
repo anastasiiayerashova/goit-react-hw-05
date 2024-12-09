@@ -9,6 +9,11 @@
   text-transform: uppercase;
   cursor: pointer;
   font-size: 20px;
+  transition: 0.25s ease;
+}
+
+.link:hover {
+  transform: scale(1.1);
 }
 
 .arrowDiv {

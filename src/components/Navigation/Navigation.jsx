@@ -4,6 +4,7 @@ import { PiFilmSlate } from "react-icons/pi";
 import { NavLink } from 'react-router-dom'
 import { AiOutlineHome } from "react-icons/ai";
 import { LiaSearchSolid } from "react-icons/lia";
+import { motion } from 'framer-motion';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);

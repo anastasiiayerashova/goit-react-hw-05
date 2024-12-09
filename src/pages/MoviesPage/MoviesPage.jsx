@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { searchMovie } from '../../api'
 import { useSearchParams } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
+import { AnimatedLayout } from '../../components/AnimatedLayout'
 
 export default function MoviesPage() {
 
@@ -29,11 +30,13 @@ export default function MoviesPage() {
     }
     
     return (
-        <div>  
+        <AnimatedLayout> 
+          
             <SearchBar onSubmit={handleSearchSubmit} />
             {newMovies.length === 0 && newQuery !== '' &&
                 (<p className={s.text}>No movies found. Try searching for something else</p>)}
             <MovieList movies={newMovies}/>
-        </div>
+            
+            </AnimatedLayout>
     )
 }

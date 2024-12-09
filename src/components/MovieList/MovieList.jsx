@@ -1,13 +1,30 @@
 import s from './MovieList.module.css'
 import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const featureAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+    },
+  visible: custom => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 }, 
+  }),
+}
+
+const hoverAnimation = {
+    scale: 1.1
+}
 
 export default function MovieList({movies}) {
     const location = useLocation()
     return (
         <div> 
-        <ul className={s.list}>
-            {movies.map(movie => (
-                <li key={movie.id} className={s.item}>
+        <motion.ul className={s.list} initial='hidden' animate='visible'>
+            {movies.map((movie, index) => (
+                <motion.li key={movie.id} className={s.item} variants={featureAnimation} custom={index + 1} whileHover={hoverAnimation}>
                     <Link to={`/movies/${movie.id.toString()}`} state={location}>
                         
                         {movie.poster_path ? (<img src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} alt={movie.title} className={s.img} />)
@@ -15,9 +32,9 @@ export default function MovieList({movies}) {
                         }
                         <h2>{movie.title}</h2>
                     </Link>
-              </li>
+              </motion.li>
           ))}
-            </ul>
+            </motion.ul>
             </div>
     )
 }

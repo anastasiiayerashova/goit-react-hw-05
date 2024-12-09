@@ -3,6 +3,19 @@ import MovieList from '../../components/MovieList/MovieList'
 import { useState, useEffect } from 'react'
 import { getTrendingMovies } from '../../api'
 import Loader from '../../components/Loader/Loader'
+import { motion } from 'framer-motion'
+
+const textAnimation = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: custom => ({
+        x: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.3}
+    })
+}
 
 export default function HomePage() {
     const [movies, setMovies] = useState([])
@@ -22,7 +35,7 @@ export default function HomePage() {
 
     return (
         <div> 
-            <h1 className={s.title}>Trending today</h1>
+            <motion.h1 className={s.title} custom={1} variants={textAnimation} initial='hidden' animate='visible'>Trending today</motion.h1>
             <MovieList movies={movies} />
         </div>
     )
