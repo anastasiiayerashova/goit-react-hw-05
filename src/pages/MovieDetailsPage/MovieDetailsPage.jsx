@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 import BackLink from '../../components/BackLink/BackLink'
 import clsx from 'clsx'
 import Loader from '../../components/Loader/Loader'
+import { AnimatedLayout } from '../../components/AnimatedLayout'
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -49,6 +50,7 @@ export default function MovieDetailsPage() {
     }
     
     return (
+        <AnimatedLayout> 
         <div>
             <BackLink to={backLinkHref.current}/>
             <div className={s.firstDiv}>
@@ -128,6 +130,7 @@ export default function MovieDetailsPage() {
                     <Outlet />
                 </Suspense>
                 </div>
-        </div>
+            </div>
+            </AnimatedLayout>
     )
 }
