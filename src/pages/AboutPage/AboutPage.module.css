@@ -1,0 +1,16 @@
+.title {
+  font-weight: 700;
+  margin-top: 35px;
+  color: #551a8b;
+}
+
+.text {
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+.firstDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

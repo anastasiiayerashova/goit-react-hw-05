@@ -31,12 +31,10 @@ export default function MoviesPage() {
     
     return (
         <AnimatedLayout> 
-          
             <SearchBar onSubmit={handleSearchSubmit} />
             {newMovies.length === 0 && newQuery !== '' &&
                 (<p className={s.text}>No movies found. Try searching for something else</p>)}
             <MovieList movies={newMovies}/>
-            
-            </AnimatedLayout>
+        </AnimatedLayout>
     )
 }

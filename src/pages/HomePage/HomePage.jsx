@@ -4,18 +4,19 @@ import { useState, useEffect } from 'react'
 import { getTrendingMovies } from '../../api'
 import Loader from '../../components/Loader/Loader'
 import { motion } from 'framer-motion'
+import { AnimatedLayout } from '../../components/AnimatedLayout'
 
 const textAnimation = {
-    hidden: {
-        x: -100,
-        opacity: 0,
+    hidden: { 
+        scale: 0.5, 
+        opacity: 0 
     },
     visible: custom => ({
-        x: 0,
+        scale: 1,
         opacity: 1,
-        transition: {delay: custom * 0.3}
+        transition: { delay: custom * 0.3, duration: 0.5 }
     })
-}
+};
 
 export default function HomePage() {
     const [movies, setMovies] = useState([])
@@ -34,9 +35,11 @@ export default function HomePage() {
     }
 
     return (
+    <AnimatedLayout>
         <div> 
             <motion.h1 className={s.title} custom={1} variants={textAnimation} initial='hidden' animate='visible'>Trending today</motion.h1>
             <MovieList movies={movies} />
         </div>
+    </AnimatedLayout>
     )
 }

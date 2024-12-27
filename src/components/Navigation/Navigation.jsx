@@ -21,7 +21,8 @@ export default function Navigation() {
                 FilmFinder
             </p>
             <nav className={s.nav}>  
-                <NavLink to='/' className={buildLinkClass}>Home <AiOutlineHome size={28}/></NavLink>
+                <NavLink to='/' className={buildLinkClass}>Home <AiOutlineHome size={28} /></NavLink>
+                <NavLink to='/about' className={buildLinkClass}>About Us</NavLink>
                 <NavLink to='/movies' className={buildLinkClass}>Movies <LiaSearchSolid size={28}/></NavLink>
                 </nav>
         </header>
