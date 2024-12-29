@@ -9,16 +9,16 @@
 
 .nav {
   display: flex;
-  gap: 5px;
+  gap: 3px;
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: 900;
   margin: 0;
   display: flex;
   align-items: center;
   color: #551a8b;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .link {
@@ -29,7 +29,7 @@
   gap: 2px;
   transition: 0.25s ease;
   font-size: 12px;
-  padding: 4px 7px;
+  padding: 4px 6px;
   align-items: flex-start;
 }
 
