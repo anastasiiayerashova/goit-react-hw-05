@@ -1,10 +1,10 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px 30px;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
   & h2 {
-    font-size: 20px;
+    font-size: 14px;
     padding: 10px;
   }
 }
@@ -13,6 +13,7 @@
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.25s ease;
+  text-align: center;
 }
 
 .img {
@@ -20,5 +21,15 @@
   object-fit: contain;
   width: 100%;
   height: auto;
-  min-height: 364px;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    padding: unset;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 30px;
+    & h2 {
+      font-size: 20px;
+    }
+  }
 }

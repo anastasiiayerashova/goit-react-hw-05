@@ -3,6 +3,8 @@ import s from './MovieReviews.module.css'
 import { useParams } from 'react-router-dom'
 import { getMovieReviews } from '../../api'
 import Loader from '../Loader/Loader'
+import { motion } from 'framer-motion'
+import { li } from 'framer-motion/client'
 
 export default function MovieReviews() {
     const [reviews, setReviews] = useState([])
@@ -30,11 +32,29 @@ export default function MovieReviews() {
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const year = date.getFullYear();
 
-  return `${day}.${month}.${year}` }
+        return `${day}.${month}.${year}`
+    }
+    
+    const listVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50, 
+  },
+  visible: {
+    opacity: 1,
+    y: 0, 
+    transition: {
+      staggerChildren: 0.2, 
+      duration: 0.5,
+    },
+  },
+};
 
     return (
-        <div>
-            <ul className={s.list}>
+        <motion.div initial="hidden"
+      animate="visible"
+      exit="hidden">
+            <motion.ul className={s.list} variants={listVariants}>
                 {reviews.map(review => (
                     <li key={review.id} className={s.item}>
 
@@ -53,7 +73,7 @@ export default function MovieReviews() {
                         </div>
                     </li>
                 ))}
-            </ul>
-        </div>
+            </motion.ul>
+        </motion.div>
     )
 }

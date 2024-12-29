@@ -64,7 +64,7 @@ export default function MovieDetailsPage() {
                         <h2>{`${details.title} (${year})`}</h2>
                         
                         {details.tagline !== '' && (
-                            <p>{`${details.tagline}...`}</p>
+                            <p className={s.descText}>{`${details.tagline}...`}</p>
                         )}
 
                         {details.imdb_id !== null && (<a href={`https://www.imdb.com/title/${details.imdb_id}`} target='_blank' rel='noopener noreferrer'>View on IMDb</a>)}

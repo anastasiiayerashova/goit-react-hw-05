@@ -2,15 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 52px;
-  padding: 8px 0;
-  margin-bottom: 16px;
   border-bottom: 1px solid #551a8b;
-  min-width: 900px;
+  padding: 12px 0;
+  gap: 25px;
 }
 
 .nav {
   display: flex;
+  gap: 5px;
 }
 
 .logo {
@@ -18,19 +17,20 @@
   margin: 0;
   display: flex;
   align-items: center;
-  font-size: 29px;
   color: #551a8b;
+  font-size: 14px;
 }
 
 .link {
-  padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 20px;
   display: flex;
-  gap: 5px;
+  gap: 2px;
   transition: 0.25s ease;
+  font-size: 12px;
+  padding: 4px 10px;
+  align-items: flex-start;
 }
 
 .link:hover {
@@ -40,4 +40,48 @@
 .active {
   color: white;
   background-color: #551a8b;
+}
+
+.titleIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.navIcon {
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    gap: 52px;
+    padding: 8px 0;
+    margin-bottom: 16px;
+    min-width: 900px;
+  }
+
+  .nav {
+    gap: unset;
+  }
+
+  .logo {
+    font-size: 29px;
+  }
+
+  .link {
+    font-size: 20px;
+    padding: 8px 16px;
+    gap: 5px;
+    align-items: unset;
+  }
+
+  .titleIcon {
+    width: 47px;
+    height: 47px;
+  }
+
+  .navIcon {
+    width: 28px;
+    height: 28px;
+  }
 }

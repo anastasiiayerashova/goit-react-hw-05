@@ -3,6 +3,7 @@ import { getMovieCast } from '../../api'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Loader from '../Loader/Loader'
+import { motion } from 'framer-motion'
 
 export default function MovieCast() {
     const [cast, setCast] = useState([])
@@ -24,11 +25,23 @@ export default function MovieCast() {
         return <p className={s.castText}>Cast details are missing. Check back later for updates!</p>
     }
 
+    const featureAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+    },
+  visible: custom => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 }, 
+  }),
+}
+
     return (
         <div>
-            <ul className={s.list}>
-                {cast.map(actor => (
-                    <li key={actor.cast_id} className={s.item}>
+            <motion.ul className={s.list} initial='hidden' animate='visible'>
+                {cast.map((actor, index) => (
+                    <motion.li key={actor.cast_id} className={s.item} variants={featureAnimation} custom={index + 1}>
                         {actor.profile_path ? (
                                      <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} className={s.image} />
                         ) : (
@@ -48,9 +61,9 @@ export default function MovieCast() {
                                 {' '}<span>{actor.known_for_department}</span>
                             </h5>
                         </div>
-                    </li>
+                    </motion.li>
                 ))}
-            </ul>
+            </motion.ul>
         </div>
     )
 }

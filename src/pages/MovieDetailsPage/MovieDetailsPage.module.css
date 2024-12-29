@@ -1,101 +1,100 @@
 .firstDiv {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+img {
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
 }
 
 .secDiv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  & h2 {
-    display: flex;
-    text-align: left;
-  }
+  gap: 20px;
 }
 
 .titleDiv {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  & p {
-    text-align: left;
-    font-size: 25px;
-  }
-  & a {
-    display: flex;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
 }
 
-img {
-  border-radius: 4px;
-  display: flex;
+.titleDiv h2 {
+  text-align: left;
+  font-size: 24px;
+}
+
+.titleDiv p {
+  text-align: left;
+  font-size: 18px;
+}
+
+.titleDiv a {
+  font-size: 14px;
+  color: #551a8b;
+  text-decoration: underline;
+  text-align: left;
 }
 
 .firstPart {
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  & h3 {
-    margin: 0;
-    font-size: 30px;
-    & span {
-      font-weight: 100;
-      font-size: 25px;
-    }
-  }
-
-  & li {
-    font-size: 20px;
-  }
+  gap: 10px;
 }
 
-.genresDiv {
-  display: flex;
-  & ul {
-    display: flex;
-    gap: 5px;
-  }
-  & p {
-    font-size: 25px;
-  }
+.firstPart h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.firstPart h3 span {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.genresDiv p {
+  font-size: 18px;
 }
 
 .desc {
-  margin-top: 35px;
-  margin-bottom: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  gap: 10px;
   text-align: left;
-  gap: 15px;
-  & h3 {
-    font-size: 30px;
-  }
-  & p {
-    font-size: 25px;
-  }
+}
+
+.desc h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.desc p {
+  font-size: 18px;
 }
 
 .navDiv {
-  display: flex;
-  flex-direction: column;
+  gap: 10px;
   text-align: left;
-  gap: 15px;
-  & h3 {
-    font-size: 30px;
-  }
+}
+
+.navDiv h3 {
+  font-size: 22px;
 }
 
 .nav {
   display: flex;
-  gap: 20px;
-  & a {
-    font-size: 20px;
-  }
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.nav a {
+  font-size: 16px;
+  border: 1px solid #551a8b;
 }
 
 .link {
@@ -108,4 +107,82 @@ img {
 .active {
   color: white;
   background-color: #551a8b;
+}
+
+.descText {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .firstDiv {
+    gap: 40px;
+    flex-wrap: nowrap;
+  }
+
+  .titleDiv h2 {
+    font-size: 40px;
+  }
+
+  .titleDiv p {
+    font-size: 30px;
+  }
+
+  .titleDiv a {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .firstPart {
+    gap: 15px;
+  }
+
+  .firstPart h3 {
+    font-size: 30px;
+  }
+
+  .firstPart h3 span {
+    font-size: 25px;
+  }
+
+  .secDiv {
+    gap: unset;
+    justify-content: space-between;
+  }
+
+  .genresDiv p {
+    font-size: 20px;
+  }
+
+  .desc {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    gap: 15px;
+  }
+
+  .desc h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .desc p {
+    font-size: 25px;
+  }
+
+  .navDiv {
+    gap: 15px;
+  }
+
+  .navDiv h3 {
+    font-size: 30px;
+  }
+
+  .nav {
+    gap: 15px;
+    margin: 20px 0px;
+  }
+
+  .nav a {
+    font-size: 25px;
+    padding: 8px 25px;
+  }
 }

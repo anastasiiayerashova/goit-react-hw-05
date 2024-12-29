@@ -6,7 +6,7 @@ export default function BackLink({to}) {
     return (
 <div className={s.arrowDiv}> 
         <Link to={to} className={s.link}>
-            <HiArrowLeft size={24} />
+                <HiArrowLeft size={24} className={s.icon} />
             Go back
         </Link>
          </div>

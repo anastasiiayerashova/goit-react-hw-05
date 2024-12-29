@@ -36,9 +36,9 @@ export default function SearchBar({ onSubmit }) {
         reviews, cast, and more. Discover your next favorite movie in just a few clicks!</motion.p>
            <div className={s.wrapper}> 
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-                <Form>
+                <Form className={s.form}>
                     <button type='submit' className={s.icon}>
-                     <LiaSearchSolid size={28}/>
+                            <LiaSearchSolid size={28} className={s.icon} />
                     </button>
                     <Field type='text' name='query' className={s.input} />
                 </Form>
