@@ -4,13 +4,15 @@ import { motion } from 'framer-motion'
 
 const featureAnimation = {
   hidden: {
-    y: 100,
+    y: 300,
     opacity: 0,
     },
   visible: custom => ({
     y: 0,
     opacity: 1,
-    transition: { delay: custom * 0.2 }, 
+    transition: { delay: custom * 0.1 }, 
+    duration: 0.5,
+    ease: "easeOut",
   }),
 }
 
