@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getMovieReviews } from '../../api'
 import Loader from '../Loader/Loader'
 import { motion } from 'framer-motion'
-import { li } from 'framer-motion/client'
+
 
 export default function MovieReviews() {
     const [reviews, setReviews] = useState([])
@@ -48,7 +48,7 @@ export default function MovieReviews() {
       duration: 0.5,
     },
   },
-};
+    };
 
     return (
         <motion.div initial="hidden"

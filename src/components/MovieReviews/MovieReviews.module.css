@@ -13,6 +13,22 @@
   max-width: 300px;
 }
 
+.item:nth-child(odd) {
+  background-color: #551a8b;
+  color: #ffffff;
+  & h4 {
+    color: #ffffff;
+  }
+  & p {
+    color: #ffffff;
+  }
+}
+
+.item:nth-child(even) {
+  background-color: #ffffff;
+  color: #551a8b;
+}
+
 .item h4 {
   font-size: 20px;
   margin: 10px 0;
