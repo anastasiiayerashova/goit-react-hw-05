@@ -38,7 +38,7 @@ export default function HomePage() {
     <AnimatedLayout>
         <div> 
             <motion.h1 className={s.title} custom={1} variants={textAnimation} initial='hidden' animate='visible'>Trending today</motion.h1>
-            <motion.p className={s.text} custom={2} variants={textAnimation} initial='hidden' animate='visible'>Explore our collection of movies and click on any title to uncover detailed information about the film, including its plot, cast, release date, and much more!</motion.p>
+            <motion.p className={s.text} custom={2} variants={textAnimation} initial='hidden' animate='visible'>Explore our collection of movies and click on any movie to uncover detailed information about the film, including its plot, cast, release date, and much more!</motion.p>
             <MovieList movies={movies} />
         </div>
     </AnimatedLayout>
