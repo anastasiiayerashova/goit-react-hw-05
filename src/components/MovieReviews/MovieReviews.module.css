@@ -13,7 +13,7 @@
   max-width: 300px;
 }
 
-.item:nth-child(odd) {
+.item:nth-child(even) {
   background-color: #551a8b;
   color: #ffffff;
   & h4 {
@@ -24,7 +24,7 @@
   }
 }
 
-.item:nth-child(even) {
+.item:nth-child(odd) {
   background-color: #ffffff;
   color: #551a8b;
 }
@@ -35,7 +35,7 @@
 }
 
 .item p {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .content {
