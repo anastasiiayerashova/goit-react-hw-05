@@ -1,7 +1,7 @@
 .firstDiv {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 img {
@@ -21,17 +21,16 @@ img {
 .titleDiv {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
-.titleDiv h2 {
-  text-align: left;
+.firstDiv h2 {
   font-size: 22px;
   margin: 0 auto;
   padding: 8px 10px;
   background-color: #551a8b;
   color: #f9f9f9;
-  width: 100%;
+  width: 95%;
   text-align: center;
   border-radius: 4px;
 }
@@ -136,6 +135,10 @@ img {
   .firstDiv {
     gap: 40px;
     flex-wrap: nowrap;
+  }
+
+  .titleDiv {
+    gap: 10px;
   }
 
   .titleDiv h2 {

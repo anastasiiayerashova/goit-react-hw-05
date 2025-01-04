@@ -57,11 +57,11 @@ export default function MovieDetailsPage() {
 
                 {details.poster_path ? (<img src={`https://image.tmdb.org/t/p/w400${details.poster_path}`} alt={details.title} />)
                     : (<img src='/defaultMoviePoster.jpg' alt={details.title} className={s.img} />)
-                }
-                
+                    }
+                    
+                <h2>{`${details.title} (${year})`}</h2>
                 <div className={s.secDiv}>
                     <div className={s.titleDiv}> 
-                        <h2>{`${details.title} (${year})`}</h2>
                         
                         {details.tagline !== '' && (
                             <p className={s.descText}>{`${details.tagline}...`}</p>
