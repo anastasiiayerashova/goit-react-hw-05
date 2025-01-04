@@ -37,7 +37,7 @@ export default function AboutPage() {
                         looking for the latest blockbusters or hidden gems, FilmFinder is your ultimate guide
                         to the world of cinema</motion.p>
                     </div>
-        </div>
+            </div>
     </AnimatedLayout>
     )
 }

@@ -5,6 +5,7 @@ import { getTrendingMovies } from '../../api'
 import Loader from '../../components/Loader/Loader'
 import { motion } from 'framer-motion'
 import { AnimatedLayout } from '../../components/AnimatedLayout'
+import Footer from '../../components/Footer/Footer'
 
 const textAnimation = {
     hidden: { 
@@ -40,7 +41,8 @@ export default function HomePage() {
             <motion.h1 className={s.title} custom={1} variants={textAnimation} initial='hidden' animate='visible'>Trending today</motion.h1>
             <motion.p className={s.text} custom={2} variants={textAnimation} initial='hidden' animate='visible'>Explore our collection of movies and click on any movie to uncover detailed information about the film, including its plot, cast, release date, and much more!</motion.p>
             <MovieList movies={movies} />
-        </div>
+            </div>
+            <Footer/>
     </AnimatedLayout>
     )
 }
